@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  mysql:
+   image: mariadb
+   restart: always
+   volumes:
+    - ./databases:/var/lib/mysql
+    - ./schema.sql:/docker-entrypoint-initdb.d/schema.scq:ro
+   environment:
+    - MYSQL_ROOT_PASSWORD=12345
+   ports:
+    - "3307:3306"
+  mailserver:
+   image: tianon/exim4
+   volumes:
+    - ./exim/exin4.conf:/etc/exim4.exim4.conf  
+    - ./dovecot/dovecot.conf:/etc/dovecot/dovecot.conf
+    - ./dovecot/dovecot-sql.conf:/etc/dovecot/dovecot-sql.conf
+    - ./vmail:/var/vmail
+   ports:
+    - '143:143'
+    - '110:110'
+    - '25:25'
+    - '8087:80'
+   command: /usr/bin/supervisord
+   tty: true
+   stdin_open: true

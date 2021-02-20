@@ -1,0 +1,21 @@
+networks:
+  default:
+    external:
+      name:version: '3.3'
+
+services:
+
+ redis:
+  image: redis
+  restart: always
+  environment:
+     auth: 12345
+  volumes:
+    - /home/vncuser/dockerdir/redis:/usr/local/etc/redis
+ networks:
+  nnet:
+    driver: bridge
+    attachable: true  
+  hostname: redis
+  ports:
+     - 6397:6397

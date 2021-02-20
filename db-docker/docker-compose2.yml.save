@@ -1,0 +1,17 @@
+
+
+services:
+
+ db:
+  image: redis
+  restart: always
+  environment:
+ 
+  volumes:
+    - /home/vncuser/dockerdir/mysql:/var/lib/mysql
+
+ adminer:
+  image: adminer
+  restart: always
+  ports:
+     - 6080:80

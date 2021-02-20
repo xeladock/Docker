@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+
+ redis:
+  image: redis
+  restart: always
+  environment:
+     auth: 12345
+  volumes:
+    - /home/vncuser/dockerdir/redis:/usr/local/etc/redis
+  hostname: redis
+  ports:
+     - 6397:6397

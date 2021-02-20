@@ -1,0 +1,20 @@
+{
+  "Services": {
+    "redis": {
+      "Env": [
+        "auth=12345"
+      ],
+      "Image": "redis@sha256:9755880356c4ced4ff7745bafe620f0b63dd17747caedba72504ef7bac882089",
+      "Networks": [
+        "default"
+      ],
+      "Ports": [
+        {
+          "Port": 6379,
+          "Protocol": "tcp"
+        }
+      ]
+    }
+  },
+  "Version": "0.1"
+}

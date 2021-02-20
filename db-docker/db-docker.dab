@@ -1,0 +1,26 @@
+{
+  "Services": {
+    "adminer": {
+      "Image": "adminer@sha256:1f3516edd30f5bc55f65cd4e18ff3bebae9a20ca271ddfa29d845e96c5871741",
+      "Networks": [
+        "default"
+      ],
+      "Ports": [
+        {
+          "Port": 8080,
+          "Protocol": "tcp"
+        }
+      ]
+    },
+    "db": {
+      "Env": [
+        "MYSQL_ROOT_PASSWORD=12345"
+      ],
+      "Image": "mariadb@sha256:6f1faac314874361a45fc946c37ba5c597ecba647666156bde783ef088d1c184",
+      "Networks": [
+        "default"
+      ]
+    }
+  },
+  "Version": "0.1"
+}

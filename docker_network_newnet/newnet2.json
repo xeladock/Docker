@@ -1,0 +1,30 @@
+[
+    {
+        "Name": "newnet2",
+        "Id": "f3f1abbde711ee8b41bac6cda10da574d0afdea894336c414bd2fe3dcf6891d0",
+        "Created": "2020-12-02T16:02:54.843578522+03:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.28.0.0/24",
+                    "Gateway": "172.28.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Options": {},
+        "Labels": {}
+    }
+]

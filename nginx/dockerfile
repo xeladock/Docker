@@ -1,0 +1,13 @@
+FROM ubuntu
+MAINTAINER xeladock
+
+RUN apt update && \
+    apt install -y nginx \
+		procps \
+		iproute2
+
+##ADD nginx.conf /usr/share/nginx/nginx.conf
+
+EXPOSE 80/tcp 443/tcp
+
+CMD ["nginx", "-g", "daemon off" ]
